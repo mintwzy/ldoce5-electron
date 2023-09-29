@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import icon from '../../assets/icon.svg';
 import './App.css';
@@ -41,27 +41,27 @@ function Hello() {
 }
 
 export default function App() {
-  const [content, setContent] = React.useState('default content');
+  const [content, setContent] = React.useState('');
+
   window.electron.ipcRenderer.once('ipc-example', (arg) => {
     // eslint-disable-next-line no-console
     console.log(arg);
     // @ts-ignore
     setContent(arg);
   });
+
   const onChange = (event) => {
     event.preventDefault();
 
-    window.electron.ipcRenderer.sendMessage('ipc-example', [event.target.value]);
+    window.electron.ipcRenderer.sendMessage('ipc-example', [
+      event.target.value,
+    ]);
   };
   return (
-    <div>
-      <input  onChange={onChange}/>
-      {content}
-      <Router>
-        <Routes>
-          <Route path="/" element={<Hello />} />
-        </Routes>
-      </Router>
+    <div className="main-container">
+      <input className="search-bar" onChange={onChange} />
+      <div className="seach-result">{content}</div>
+      <div className="content">main content</div>
     </div>
   );
 }

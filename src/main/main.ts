@@ -35,8 +35,7 @@ ipcMain.on('electron-store-set', async (event, key, val) => {
 });
 
 ipcMain.on('ipc-example', async (event, arg) => {
-  const msgTemplate = (pingPong: string) => `IPC test: ${pingPong}`;
-  console.log(msgTemplate(arg));
+  const msgTemplate = (word: string) => `${word}`;
   event.reply('ipc-example', msgTemplate(arg));
 });
 

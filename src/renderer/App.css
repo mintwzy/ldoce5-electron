@@ -60,3 +60,25 @@ a:hover {
   align-items: center;
   margin: 20px 0;
 }
+
+.main-container {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.main-container > div {
+}
+
+.search-bar {
+  grid-column: 1/3;
+  grid-row: 1;
+}
+.search-result {
+  grid-column: 1;
+  grid-row: 2/5;
+}
+.content {
+
+}
