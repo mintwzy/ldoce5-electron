@@ -54,31 +54,24 @@ a:hover {
   text-decoration: none;
 }
 
-.Hello {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-}
-
-.main-container {
-  display: grid;
-  margin: 0 auto;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(100px, auto);
-}
-
-.main-container > div {
-}
-
 .search-bar {
-  grid-column: 1/3;
-  grid-row: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
 }
-.search-result {
-  grid-column: 1;
-  grid-row: 2/5;
-}
-.content {
 
+.content {
+  display: flex;
+  width: 500px;
+  height: 600px;
+  padding: 0;
+  margin: 0;
+}
+
+.word-list {
+  border-right: solid;
+  width: 100px;
+  height: auto;
+  color: black;
 }
